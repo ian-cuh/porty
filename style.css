@@ -1,0 +1,373 @@
+/* ================================
+   GLOBAL THEME VARIABLES
+================================ */
+:root {
+  --bg-main: #0b0f1a;
+  --bg-secondary: #12182b;
+  --bg-card: #161d36;
+
+  --accent-primary: #7cf5ff;
+  --accent-secondary: #b38cff;
+  --accent-cta: #4fd1c5;
+
+  --text-main: #e6e9ff;
+  --text-secondary: #aab0d6;
+  --text-muted: #7c83b8;
+}
+
+/* ================================
+   RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+#hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa")
+    center / cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 15, 26, 0.3),
+    rgba(11, 15, 26, 0.85)
+  );
+  transition: background 0.5s;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(18, 24, 43, 0.65);
+  backdrop-filter: blur(14px);
+  z-index: 100;
+}
+
+nav h1 {
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent-primary);
+}
+
+/* ================================
+   HERO TEXT
+================================ */
+.hero-text {
+  position: absolute;
+  bottom: 26%;
+  left: 10%;
+}
+
+.hero-text h2 {
+  font-size: 3.8rem;
+  line-height: 1.1;
+  text-shadow: 0 0 25px rgba(124, 245, 255, 0.15);
+}
+
+.hero-text span {
+  color: var(--accent-primary);
+}
+
+.hero-text p {
+  margin-top: 12px;
+  color: var(--text-secondary);
+}
+
+/* ================================
+   SECTIONS
+================================ */
+section {
+  padding: 120px 12%;
+  background: var(--bg-secondary);
+}
+
+section:nth-child(even) {
+  background: var(--bg-main);
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  color: var(--accent-secondary);
+}
+
+/* ================================
+   SCROLL REVEAL
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* ================================
+   TOOL CARD (CALCULATOR)
+================================ */
+.tool-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 320px;
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(124, 245, 255, 0.08);
+}
+
+/* Calculator */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  background: #0e1426;
+  color: var(--text-main);
+  border-radius: 8px;
+  border: 1px solid rgba(124, 245, 255, 0.15);
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+button {
+  padding: 10px;
+  background: #1b2347;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--accent-secondary);
+}
+
+.eq {
+  grid-column: span 2;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-cta)
+  );
+  color: #0b0f1a;
+}
+
+/* ================================
+   GAME SECTION
+================================ */
+#game {
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 20px rgba(124, 245, 255, 0.25);
+  background: black;
+}
+
+#score {
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ================================
+   GALLERY
+================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(124,245,255,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(124,245,255,0.35);
+}
+
+/* ================================
+   CONTACT SECTION
+================================ */
+#contact {
+  text-align: center;
+}
+
+form {
+  max-width: 380px;
+  margin: auto;
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(124, 245, 255, 0.1);
+}
+
+form button {
+  margin-top: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  color: #0b0f1a;
+  font-weight: bold;
+}
+
+#status {
+  margin-top: 10px;
+  color: var(--accent-primary);
+}
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+.social {
+  margin-top: 30px;
+}
+
+.social a {
+  margin: 0 14px;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: var(--accent-primary);
+  text-shadow: 0 0 15px rgba(124, 245, 255, 0.6);
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  padding: 25px;
+  text-align: center;
+  background: #050816;
+  color: var(--text-muted);
+}
+
+/* ================================
+   SECTION DIVIDERS
+================================ */
+.section-divider {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--bg-main)
+  );
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230b0f1a' d='M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,80C840,85,960,75,1080,64C1200,53,1320,43,1380,37.3L1440,32L1440,0L0,0Z'/%3E%3C/svg%3E");
+  background-size: cover;
+}
+
+/* ================================
+   STARFIELD
+================================ */
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ================================
+   INTRO ANIMATION
+================================ */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #0b0f1a, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 1.2s ease forwards;
+  animation-delay: 2s;
+}
+
+#intro h1 {
+  font-size: 4rem;
+  letter-spacing: 6px;
+  color: var(--accent-primary);
+  text-shadow: 0 0 40px rgba(124,245,255,0.6);
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

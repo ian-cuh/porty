@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ian Dsouza | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init("Hgr6MKyJbMlX7i8Rc");
+})();
+</script>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+<div id="intro">
+  <h1>welcome!</h1>
+</div>
+
+
+<header id="hero">
+  <div class="overlay"></div>
+
+  <nav>
+    <h1>IAN DSOUZA.</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#game">Game</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-text reveal">
+    <h2>Crafting Experiences<br><span>Beyond Gravity</span></h2>
+    <p>Developer • Designer • Creative Technologist</p>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <p>
+    I am a creative and enthusiastic individual who enjoys expressing ideas through innovation and design.
+     I have a strong interest in sports, especially badminton, which has helped me develop discipline, focus, and teamwork. Alongside sports, I actively participate in hackathons such as BitnBuild, where I enjoy collaborating with others to solve real-world problems using technology. These experiences allow me to combine creativity, problem-solving, and continuous learning, driving me to grow both personally and professionally.
+
+
+
+
+
+
+
+
+  </p>
+</section>
+<div class="section-divider"></div>
+
+<section id="tools">
+  <h2 class="reveal">Mini Projects</h2>
+
+  <div class="tool-grid">
+    <div class="card reveal">
+      <h3>Calculator</h3>
+      <input id="display" readonly>
+      <div class="buttons">
+        <button onclick="clr()">C</button>
+        <button onclick="add('/')">÷</button>
+        <button onclick="add('*')">×</button>
+        <button onclick="add('-')">−</button>
+        <button onclick="add('7')">7</button>
+        <button onclick="add('8')">8</button>
+        <button onclick="add('9')">9</button>
+        <button onclick="add('+')">+</button>
+        <button onclick="add('4')">4</button>
+        <button onclick="add('5')">5</button>
+        <button onclick="add('6')">6</button>
+        <button onclick="add('1')">1</button>
+        <button onclick="add('2')">2</button>
+        <button onclick="add('3')">3</button>
+        <button onclick="add('0')">0</button>
+        <button class="eq" onclick="calc()">=</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-divider"></div>
+
+<section id="game" class="reveal">
+  <h2>2D Space Shooter</h2>
+  <canvas id="shooter" width="360" height="480"></canvas>
+  <p id="score">Score: 0</p>
+  <p class="hint">Move mouse • Auto-shoot • Survive</p>
+</section>
+<div class="section-divider"></div>
+
+<section id="gallery">
+  <h2 class="reveal">Gallery</h2>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+<div class="section-divider"></div>
+
+<section id="contact">
+  <h2 class="reveal">Contact Me</h2>
+
+  <form id="contact-form" class="reveal">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+    <p id="status"></p>
+  </form>
+
+  <div class="social reveal">
+    <a href="https://instagram.com/YOUR_USERNAME" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/ian-cuh" target="_blank"><i class="fab fa-github"></i></a>
+    
+</section>
+<div class="section-divider"></div>
+
+<footer>
+  © 2025 Ian Dsouza
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
